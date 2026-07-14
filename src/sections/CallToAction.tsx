@@ -1,14 +1,11 @@
 "use client";
 import { motion, useAnimate, AnimationPlaybackControls } from "framer-motion";
 import { useEffect, useState } from "react";
-
 export default function CallToAction() {
   const [isHovered, setIsHovered] = useState(false);
   const [scope, animate] = useAnimate();
-
   // Explicitly typing the animation state
   const [animation, setAnimation] = useState<AnimationPlaybackControls | null>(null);
-
   useEffect(() => {
     const startAnimation = async () => {
       const controls = await animate(
@@ -20,13 +17,11 @@ export default function CallToAction() {
     };
     startAnimation();
   }, [animate, scope]);
-
   useEffect(() => {
     if (animation) {
       animation.speed = isHovered ? 0.3 : 1;
     }
   }, [isHovered, animation]);
-
   return (
     <section className="py-24">
       <div className="overflow-x-clip p-4 flex">
@@ -39,7 +34,7 @@ export default function CallToAction() {
           {Array.from({ length: 10 }).map((_, i) => (
             <div key={i} className="flex items-center gap-16">
               <span className="text-lime-400 text-7xl">&#10038;</span>
-              <span className="group-hover:text-lime-400">Try it for Free</span>
+              <span className="group-hover:text-lime-400">Check Your Wallet</span>
             </div>
           ))}
         </motion.div>
