@@ -25,9 +25,9 @@ export default function Integrations() {
     return (
         <section className="py-24 overflow-hidden ">
             <div className="container text-center">
-                <Tag>Integrations</Tag>
-                <h2 className="text-6xl font-medium mt-6 ">Plays well with <span className="text-lime-400">others</span></h2>
-                <p className="text-white/50 mt-4 text-lg">Layers seamlessly connects with your favourite tools, making it easy to plug into any workflow and collaborate across platforms</p>
+                <Tag>Utilities</Tag>
+<h2 className="text-6xl font-medium mt-6 ">What <span className="text-lime-400">$GOA</span> gets you</h2>
+<p className="text-white/50 mt-4 text-lg">Beyond holding, $GOA is now a working token across Goaradio, powering how you earn, pay, and get in.</p>
                 <div className="h-[400px] mt-8 overflow-hidden grid md:grid-cols-2 gap-4  [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
                 <Integrationscolumn integrations={integrations}/>
                 <Integrationscolumn integrations={integrations.slice().reverse()} reverse  className="hidden md:flex"/>
