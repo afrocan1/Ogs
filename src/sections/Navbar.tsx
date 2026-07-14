@@ -17,13 +17,13 @@ export default function Navbar() {
     <section className="py-4 lg:py-8  fixed w-full top-0 z-50">
         <div className="container max-w-5xl"> 
             <div className="border border-white/15 rounded-[27px] md:rounded-full  bg-neutral-950/70 backdrop-blur">
-                <div className="grid grid-cols-2 lg:grid-cols-3    p-2 px-4 md:pr-2  items-center   ">
-                    <div>
-                    <Image src="/logo.svg" alt="Logo image" width={120} height={46}
+                <div className="grid grid-cols-2 lg:grid-cols-3    p-2 px-3 md:px-4 md:pr-2  items-center   ">
+                    <div className="shrink-0">
+                    <Image src="/logo.svg" alt="Logo image" width={120} height={46} className="w-24 md:w-[120px] h-auto"
             />
                     </div>
                     <div className="lg:flex justify-center items-center hidden">
-                        <nav className="flex gap-6 font-medium">
+                        <nav className="flex gap-4 xl:gap-6 font-medium text-sm xl:text-base whitespace-nowrap">
                             {navLinks.map(link=>(
                                 <a href={link.href} key={link.label}>
                                     {link.label}
@@ -31,7 +31,7 @@ export default function Navbar() {
                             ))}
                         </nav>    
                     </div> 
-                    <div className="flex justify-end gap-4">
+                    <div className="flex justify-end items-center gap-2 md:gap-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -42,7 +42,7 @@ export default function Navbar() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="feather feather-menu md:hidden "
+                        className="feather feather-menu md:hidden shrink-0"
                         onClick={()=>{setIsOpen(!isOpen)}}
                         aria-hidden="true"
                     >
@@ -51,7 +51,10 @@ export default function Navbar() {
                         <line x1="3" y1="12" x2="21" y2="12" className={twMerge("transition", isOpen && "opacity-0")} />
                         <line x1="3" y1="18" x2="21" y2="18" className={twMerge( "origin-left transition", isOpen && "-rotate-45 translate-y-1")} />
                     </svg>
-                    <Button className="hidden md:inline-flex items-center" variant="primary">Check Eligibility</Button>
+                    <Button className="hidden md:inline-flex items-center whitespace-nowrap text-sm px-4 xl:text-base xl:px-6" variant="primary">
+                        <span className="xl:hidden">Check</span>
+                        <span className="hidden xl:inline">Check Eligibility</span>
+                    </Button>
                     </div>
                 </div>
                 <AnimatePresence >
