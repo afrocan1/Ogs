@@ -4,7 +4,7 @@ import {  useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-const text = `You're racing to create exceptional work, but traditional design tools slow you down with unnecessary complexity and steep learning curves.`;
+const text = `You picked up $GOA on BNB or Arbitrum before liquidity dried up and things went quiet. Goaradio didn't stop. This airdrop is how we get you caught back up.`;
 const words=text.split(" ")
 
 export default function Introduction() {
@@ -29,16 +29,16 @@ export default function Introduction() {
         <div className="container">
             <div className="sticky top-20 md:top-28">
                 <div className="flex justify-center ">
-                <Tag>Introducing Layers</Tag>
+                <Tag>The $GOA Airdrop</Tag>
                 </div> 
                 <div className="text-4xl md:text-6xl lg:text-7xl text-center font-medium mt-10 lg:top-40">
-                    <span className="">your creative process deserves better.</span> {" "}
+                    <span className="">a lot's changed since you last checked in.</span> {" "}
                     <span className="">
                     {words.map((word,wordIndex)=>(
                         <span className={ twMerge("transition duration-500 text-white/15",wordIndex<currentWord && "text-white")} key={wordIndex}>{`${word} `}</span>
                     ))}
                     </span>
-                    <span className="text-lime-400 block">That&apos;s why we build Layers</span>
+                    <span className="text-lime-400 block">Here's what $GOA does now</span>
                 </div>
             </div>
 
