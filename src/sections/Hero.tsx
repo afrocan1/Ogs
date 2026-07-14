@@ -12,7 +12,14 @@ export default function Hero() {
     const[rightPointerScope,rightPointerAnimate]=useAnimate();
     const [address, setAddress] = useState("");
     const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState<any>(null);
+    type AirdropResult = {
+      eligible: boolean;
+      totalBalance: number;
+      arbBalance: number;
+      bnbBalance: number;
+    };
+
+    const [result, setResult] = useState<AirdropResult | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(()=>{
