@@ -1,21 +1,15 @@
-import Tag from "@/components/Tag";
-import figmaLogo from "@/assets/images/figma-logo.svg"
-import notionLogo from "@/assets/images/notion-logo.svg" 
-import slackLogo from "@/assets/images/slack-logo.svg"
-import relumeLogo from "@/assets/images/relume-logo.svg"
-import framerLogo from "@/assets/images/framer-logo.svg"
-import githubLogo from "@/assets/images/github-logo.svg"
+import { AudioLines, Wallet, Ticket, Gift, HeartHandshake, Banknote } from "lucide-react";
 import Integrationscolumn from "@/components/Integrationscolumn";
 
 
 
 const integrations = [
-    { name: "Figma", icon: figmaLogo, description: "Figma is a collaborative interface design tool." },
-    { name: "Notion", icon: notionLogo, description: "Notion is an all-in-one workspace for notes and docs." },
-    { name: "Slack", icon: slackLogo, description: "Slack is a powerful team communication platform." },
-    { name: "Relume", icon: relumeLogo, description: "Relume is a no-code website builder and design system." },
-    { name: "Framer", icon: framerLogo, description: "Framer is a professional website prototyping tool." },
-    { name: "GitHub", icon: githubLogo, description: "GitHub is the leading platform for code collaboration." },
+    { name: "Stream2Earn", icon: AudioLines, description: "Earn $GOA in real time just by streaming on Goaradio." },
+    { name: "In-App Payments", icon: Wallet, description: "Spend $GOA on subscriptions, features, and more inside the app." },
+    { name: "Event Access", icon: Ticket, description: "Unlock ticketed events and drops with $GOA." },
+    { name: "Merch & Gadgets", icon: Gift, description: "Trade $GOA for merch, tech gadgets, and exclusive experiences." },
+    { name: "Direct Artist Support", icon: HeartHandshake, description: "Send $GOA straight to the artists you stream, no middleman." },
+    { name: "Cash Out", icon: Banknote, description: "Redeem your $GOA balance in your local currency, anytime." },
 ];
 
 export type IntegrationsType=typeof integrations;
