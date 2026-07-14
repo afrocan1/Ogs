@@ -61,7 +61,7 @@ export default function Hero() {
                 />
             </motion.div>
             <motion.div ref={leftPointerScope}  initial={{opacity:0, y:100,x:-200}}  className="absolute left-56 top-96 hidden lg:block">
-                      <Pointer name="swami" color="blue" /> 
+                      <Pointer name="OG" color="blue" />
             </motion.div>
             {/* {Right side animation} */}
             <motion.div ref={rightDesignScope} initial={{opacity:0,x:100,y:100}} drag className="absolute -right-64 -top-16 hidden lg:block  ">
@@ -72,7 +72,7 @@ export default function Hero() {
             ref={rightPointerScope}
             initial={{opacity:0,x:275,y:100}}
             className="absolute right-80 -top-4 hidden lg:block">
-                    <Pointer name="bryan" color="red"/>
+                    <Pointer name="Verified" color="red"/>
             </motion.div>
             <div className="flex justify-center">
                 <div className="inline-flex py-1 px-3 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full text-neutral-950 font-semibold ">
