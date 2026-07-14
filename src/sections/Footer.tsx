@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row  items-center md:justify-between   gap-6">
                 <div>
                 <Image 
-                            src="/logo.svg" 
+                            src="/Goaradio logo round (1).png" 
                             alt="Logo" 
                             width={130} 
                             height={40} 
