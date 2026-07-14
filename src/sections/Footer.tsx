@@ -1,21 +1,23 @@
-
 import Image from "next/image";
-
+const productLinks = [
+    { href: "https://goaradio.org", label: "Web App" },
+    { href: "https://app.goaradio.org", label: "Mobile App" },
+    { href: "https://artists.goaradio.org", label: "For Artists" },
+];
 const footerLinks = [
     {
-      href: "https://swamimalode.online",
+      href: "https://goaradio.org/",
       label: "Contact",
       target: "_blank",
       rel: "noopener noreferrer",   
     },
-    { href: "https://swamimalode.online", label: "Privacy Policy",
+    { href: "https://goaradio.org/", label: "Privacy Policy",
         target: "_blank",
         rel: "noopener noreferrer"   },
-    { href: "https://swamimalode.online", label: "Terms & Conditions",
+    { href: "https://goaradio.org/", label: "Terms & Conditions",
         target: "_blank",
         rel: "noopener noreferrer",  },
   ];
-
 export default function Footer() {
     return <section className="py-16">
         <div className="container">
@@ -28,6 +30,14 @@ export default function Footer() {
                             height={40} 
                             priority
                         />
+                </div>
+                <div>
+                    <nav className="flex gap-6">
+                        {productLinks.map((link,index)=>(
+                            <a key={index} href={link.href} target="_blank"
+                            rel="noopener noreferrer" className="text-white/50 text-sm">{link.label}</a>
+                        ))}
+                    </nav>
                 </div>
                 <div>
                     <nav className="flex gap-6">
