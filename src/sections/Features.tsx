@@ -1,7 +1,6 @@
 import Tag from "@/components/Tag";
 import FeatureCard from "@/components/FeatureCard";
 import { Wallet, ScanSearch, BadgeCheck } from "lucide-react";
-import Key from "@/components/Key";
 
 
 const features = [
