@@ -2,7 +2,7 @@
 import Button from "@/components/Button";
 import Pointer from "@/components/Pointer";
 import {motion,useAnimate } from "framer-motion"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import cursorYouImage from "@/assets/images/cursor-you.svg";
 
 
@@ -10,6 +10,10 @@ import cursorYouImage from "@/assets/images/cursor-you.svg";
 export default function Hero() {
     const [leftPointerScope,leftPointerAnimate]=useAnimate();
     const[rightPointerScope,rightPointerAnimate]=useAnimate();
+    const [address, setAddress] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [result, setResult] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(()=>{
         leftPointerAnimate([
@@ -55,16 +59,56 @@ $GOA BNB &amp; Arbitrum OGs
             <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto  ">
                 $GOA now powers Stream2Earn, in-app payments, and event access on GOARadio. If you held $GOA on BNB or Arbitrum, check your wallet below to see your allocation.
             </p>
-            <form className="flex border border-white/15 rounded-full p-2 mt-8 w-full max-w-lg mx-auto">
-    <input
-    type="text"
-    placeholder="Enter your BNB or Arbitrum wallet address"
-    className="bg-transparent px-4 flex-1 min-w-0 w-full outline-none"
-/>
-<Button type="submit" variant="primary" className="whitespace-nowrap" size="sm">
-    Check eligibility
-</Button>
-</form>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setError(null);
+                setResult(null);
+                if (!address.trim()) return;
+                setLoading(true);
+                try {
+                  const res = await fetch("https://backend-qxtb.onrender.com/airdrop/check", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ address: address.trim() }),
+                  });
+                  const data = await res.json();
+                  if (!res.ok) {
+                    setError(data.message || "Something went wrong. Please try again.");
+                  } else {
+                    setResult(data);
+                  }
+                } catch {
+                  setError("Could not reach the server. Please try again.");
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="flex border border-white/15 rounded-full p-2 mt-8 w-full max-w-lg mx-auto"
+            >
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="Enter your BNB or Arbitrum wallet address"
+                className="bg-transparent px-4 flex-1 min-w-0 w-full outline-none"
+              />
+              <Button type="submit" variant="primary" className="whitespace-nowrap" size="sm" disabled={loading}>
+                {loading ? "Checking..." : "Check eligibility"}
+              </Button>
+            </form>
+
+            {error && (
+              <p className="text-center text-red-400 mt-4">{error}</p>
+            )}
+
+            {result && (
+              <p className="text-center mt-4 text-lg">
+                {result.eligible
+                  ? `✅ Eligible — ${result.totalBalance.toLocaleString()} $GOA found (ARB: ${result.arbBalance.toLocaleString()}, BNB: ${result.bnbBalance.toLocaleString()}). You're registered — watch for claim instructions.`
+                  : "❌ No $GOA found on this address across BNB or Arbitrum."}
+              </p>
+            )}
 
         </div>
     </section>
