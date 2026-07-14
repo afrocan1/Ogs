@@ -75,30 +75,25 @@ export default function Hero() {
                     <Pointer name="bryan" color="red"/>
             </motion.div>
             <div className="flex justify-center">
-                <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold ">
-                ✨ $7.5 million seed round raised
-                </div>
+                <div className="inline-flex py-1 px-3 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full text-neutral-950 font-semibold ">
+$GOA BNB &amp; Arbitrum OGs
+</div>
             </div>
             <h1 className="text-6xl font-medium text-center mt-6 md:text-7xl lg:text-8xl">
-                Impactful design, created effortlessly
+                You held $GOA. Now it&apos;s time to claim.
             </h1>
             <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto  ">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sequi vitae, vero eos odit ipsam ullam non delectus autem dicta!
+                $GOA now powers Stream2Earn, in-app payments, and event access on GOARadio. If you held $GOA on BNB or Arbitrum, check your wallet below to see your allocation.
             </p>
             <form className="flex border border-white/15 rounded-full p-2 mt-8 w-full max-w-lg mx-auto">
     <input
-        type="email"
-        placeholder="Enter your email"
-        className="bg-transparent px-4 flex-1 min-w-0 w-full outline-none"
-    />
-    <Button
-        type="submit"
-        variant="primary"
-        className="whitespace-nowrap"
-        size="sm"
-    >
-        Sign up
-    </Button>
+    type="text"
+    placeholder="Enter your BNB or Arbitrum wallet address"
+    className="bg-transparent px-4 flex-1 min-w-0 w-full outline-none"
+/>
+<Button type="submit" variant="primary" className="whitespace-nowrap" size="sm">
+    Check eligibility
+</Button>
 </form>
 
         </div>
