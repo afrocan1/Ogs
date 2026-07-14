@@ -32,13 +32,13 @@ export default function Introduction() {
                 <Tag>The $GOA Airdrop</Tag>
                 </div> 
                 <div className="text-4xl md:text-6xl lg:text-7xl text-center font-medium mt-10 lg:top-40">
-                    <span className="">a lot's changed since you last checked in.</span> {" "}
+                    <span className="">a lot&apos;s changed since you last checked in.</span>
                     <span className="">
                     {words.map((word,wordIndex)=>(
                         <span className={ twMerge("transition duration-500 text-white/15",wordIndex<currentWord && "text-white")} key={wordIndex}>{`${word} `}</span>
                     ))}
                     </span>
-                    <span className="text-lime-400 block">Here's what $GOA does now</span>
+                    <span className="text-lime-400 block">Here&apos;s what $GOA does now</span>
                 </div>
             </div>
 
