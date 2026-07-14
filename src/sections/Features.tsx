@@ -1,22 +1,16 @@
 import Tag from "@/components/Tag";
 import FeatureCard from "@/components/FeatureCard";
-import avatar1 from "@/assets/images/avatar-ashwin-santiago.jpg"
-import avatar2 from "@/assets/images/avatar-lula-meyers.jpg"
-import avatar3 from "@/assets/images/avatar-florence-shaw.jpg"
-import avatar4 from "@/assets/images/avatar-owen-garcia.jpg"
-import Image from "next/image";
-import Avatar from "@/components/Avatar";
+import { Wallet, ScanSearch, BadgeCheck } from "lucide-react";
 import Key from "@/components/Key";
 
 
 const features = [
-    "Asset Library",
-    "Code Preview",
-    "Flow Mode",
-    "Smart Sync",
-    "Auto Layout",
-    "Fast Search",
-    "Smart Guides",
+    "BNB Chain",
+    "Arbitrum",
+    "Instant Check",
+    "No Wallet Connect Needed",
+    "Snapshot Based",
+    "OG Registry",
 ];
 
 export default function Features() {
@@ -24,79 +18,43 @@ export default function Features() {
     <section className="py-24 ">
         <div className="container ">
             <div className="flex justify-center ">
-                <Tag>Features</Tag>
+                <Tag>How It Works</Tag>
             </div>
-                <h2 className="text-6xl font-medium text-center mt-6">where power meets {" "}
-                    <span className="text-lime-400">simplicity</span>
+                <h2 className="text-6xl font-medium text-center mt-6">check, register, {" "}
+                    <span className="text-lime-400">get ready to claim</span>
                 </h2>
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8  ">
 
                     <FeatureCard
-                         title="Real-time Collaboration" 
-                         description=" Work together seamlessly with conflict free team editing"
+                         title="Paste Your Wallet" 
+                         description="Drop the address that held $GOA on BNB Chain or Arbitrum. No wallet connect, no signature needed."
                          className="md:col-span-2 lg:col-span-1 group"
                          >
                         <div className="aspect-video flex items-center justify-center">
-                            <Avatar className="z-40">
-                                <Image src={avatar1} className="rounded-full" alt="avatar 1"/>
-                            </Avatar>
-                            <Avatar className="-ml-6 border-indigo-500 z-30">
-                                <Image src={avatar2} className="rounded-full" alt="avatar 2"/>
-                            </Avatar>
-                            <Avatar className="-ml-6 border-amber-500 z-20">
-                                <Image src={avatar3} className="rounded-full" alt="avatar 3"/>
-                            </Avatar>
-                            <Avatar className="-ml-6 border-transparent group-hover:border-green-500 transition ">
-                                <div className="size-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1 relative">
-                                    <Image src={avatar4} alt="Avatar 4" className="absolute size-full rounded-full opacity-0 group-hover:opacity-100 transition"/>
-                                    {Array.from({length:3}).map((_,i)=>(
-                                        <span className="size-1.5 rounded-full bg-white inline-flex" 
-                                        key={i}>
-                                        </span>
-                                    ))}
-                                </div>
-                            </Avatar>
+                            <Wallet className="size-16 text-lime-400 group-hover:scale-110 transition duration-500" strokeWidth={1.5} />
                         </div>
                     </FeatureCard>
 
                     <FeatureCard
-                        title="Interactive prototyping"
-                        description="Engage your clients with prototypes that react to user actions"
+                        title="We Check Both Chains"
+                        description="Your address gets checked against the $GOA contract on BNB Chain and Arbitrum for any historical balance."
                         className="md:col-span-2 lg:col-span-1 group"
                     >
                         <div className="aspect-video flex items-center justify-center relative">
-                            <p className="text-4xl font-extrabold text-white/20 group-hover:text-white/10 transition duration-500 text-center">
-                                We&apos;ve achieved
-                                <span className="relative inline-block">
-                                    <span className="relative z-20 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                        incredible
-                                    </span>
-
-                                    <video
-                                        src="/images/gif-incredible.mp4"
-                                        autoPlay
-                                        loop
-                                        playsInline
-                                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 rounded-2xl shadow-xl opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none z-10"
-                                    ></video>
-                                </span>
-                                growth this year
-                            </p>
+                            <ScanSearch className="size-16 text-lime-400 group-hover:scale-110 transition duration-500" strokeWidth={1.5} />
                         </div>
                     </FeatureCard>
 
 
                     <FeatureCard
-                         title="Keyboard QuickActions" 
-                         description="Powerful commands to help you create designs more quickly"
+                         title="Get Registered" 
+                         description="Held any amount on either chain? You're registered as an OG and locked in for the next steps toward claiming."
                          className="md:col-span-2 md:col-start-2 lg:col-span-1 lg:col-start-auto group"
                          >
 
                             <div className="aspect-video flex items-center justify-center gap-4">
-                                <Key className="w-28 outline outline-2 outline-offset-4 outline-transparent group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 ">shift</Key>
-                                <Key className="group-hover:outline outline-2 outline-offset-4 outline-transparent  group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 delay-150">alt</Key>
-                                <Key className="group-hover:outline outline-2 outline-offset-4 outline-transparent group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 delay-300">C</Key>
+                                <BadgeCheck className="size-16 text-lime-400 group-hover:scale-110 transition duration-500" strokeWidth={1.5} />
                             </div>
                     </FeatureCard>
 
