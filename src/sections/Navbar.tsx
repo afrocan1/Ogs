@@ -19,7 +19,7 @@ export default function Navbar() {
             <div className="border border-white/15 rounded-[27px] md:rounded-full  bg-neutral-950/70 backdrop-blur">
                 <div className="grid grid-cols-2 lg:grid-cols-3    p-2 px-3 md:px-4 md:pr-2  items-center   ">
                     <div className="shrink-0">
-                    <Image src="/logo.svg" alt="Logo image" width={120} height={46} className="w-24 md:w-[120px] h-auto"
+                    <Image src="/Goaradio logo round (1).png" alt="Logo image" width={120} height={46} className="w-24 md:w-[120px] h-auto"
             />
                     </div>
                     <div className="lg:flex justify-center items-center hidden">
