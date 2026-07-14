@@ -1,3 +1,5 @@
+"use client";
+
 import Tag from "@/components/Tag";
 import { AudioLines, Wallet, Ticket, Gift, HeartHandshake, Banknote } from "lucide-react";
 import Integrationscolumn from "@/components/Integrationscolumn";
