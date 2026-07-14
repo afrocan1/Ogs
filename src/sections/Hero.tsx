@@ -73,11 +73,16 @@ $GOA BNB &amp; Arbitrum OGs
                 setResult(null);
                 if (!address.trim()) return;
                 setLoading(true);
+
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 20000); // hard 20s cap
+
                 try {
                   const res = await fetch("https://backend-qxtb.onrender.com/airdrop/check", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ address: address.trim() }),
+                    signal: controller.signal,
                   });
                   const data = await res.json();
                   if (!res.ok) {
@@ -85,9 +90,14 @@ $GOA BNB &amp; Arbitrum OGs
                   } else {
                     setResult(data);
                   }
-                } catch {
-                  setError("Could not reach the server. Please try again.");
+                } catch (err) {
+                  if (err instanceof Error && err.name === "AbortError") {
+                    setError("This is taking longer than expected — the server may be waking up (Render free tier cold start). Please try again.");
+                  } else {
+                    setError("Could not reach the server. Please try again.");
+                  }
                 } finally {
+                  clearTimeout(timeoutId);
                   setLoading(false);
                 }
               }}
