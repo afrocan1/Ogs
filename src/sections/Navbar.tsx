@@ -51,10 +51,12 @@ export default function Navbar() {
                         <line x1="3" y1="12" x2="21" y2="12" className={twMerge("transition", isOpen && "opacity-0")} />
                         <line x1="3" y1="18" x2="21" y2="18" className={twMerge( "origin-left transition", isOpen && "-rotate-45 translate-y-1")} />
                     </svg>
+                    <a href="#checker">
                     <Button className="hidden md:inline-flex items-center whitespace-nowrap text-sm px-4 xl:text-base xl:px-6" variant="primary">
                         <span className="xl:hidden">Check</span>
                         <span className="hidden xl:inline">Check Eligibility</span>
                     </Button>
+                    </a>
                     </div>
                 </div>
                 <AnimatePresence >
@@ -68,7 +70,9 @@ export default function Navbar() {
                             {navLinks.map((link)=>(
                                 <a href={link.href} key={link.label} className="" >{link.label}</a>
                             ))}
+                            <a href="#checker" onClick={()=>{setIsOpen(false)}}>
                             <Button variant="primary">Check Eligibility</Button>
+                            </a>
                         </div>
                     </motion.div>
                 }
