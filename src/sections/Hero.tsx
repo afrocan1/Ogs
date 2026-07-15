@@ -116,15 +116,56 @@ $GOA BNB &amp; Arbitrum OGs
             </form>
 
             {error && (
-              <p className="text-center text-red-400 mt-4">{error}</p>
+              <div className="flex justify-center px-4 mt-6">
+                <div className="flex items-center gap-3 max-w-md w-full sm:w-auto rounded-2xl border border-red-400/20 bg-red-400/[0.06] backdrop-blur-xl px-4 py-3 sm:px-5 sm:py-3.5 shadow-[0_8px_32px_rgba(0,0,0,0.25)]">
+                  <svg className="w-5 h-5 shrink-0 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                    <circle cx="12" cy="12" r="9" />
+                    <line x1="12" y1="8" x2="12" y2="13" />
+                    <circle cx="12" cy="16" r="0.5" fill="currentColor" />
+                  </svg>
+                  <p className="text-sm text-red-200/90">{error}</p>
+                </div>
+              </div>
             )}
 
             {result && (
-              <p className="text-center mt-4 text-lg">
-                {result.eligible
-                  ? `✅ Eligible — ${result.totalBalance.toLocaleString()} $GOA found (ARB: ${result.arbBalance.toLocaleString()}, BNB: ${result.bnbBalance.toLocaleString()}). You're registered — watch for claim instructions.`
-                  : "❌ No $GOA found on this address across BNB or Arbitrum."}
-              </p>
+              <div className="flex justify-center px-4 mt-6">
+                <div
+                  className={`flex items-start gap-3 max-w-md w-full sm:w-auto rounded-2xl border backdrop-blur-xl px-4 py-4 sm:px-6 sm:py-5 shadow-[0_8px_32px_rgba(0,0,0,0.25)] ${
+                    result.eligible
+                      ? "border-emerald-400/20 bg-emerald-400/[0.06]"
+                      : "border-white/10 bg-white/[0.04]"
+                  }`}
+                >
+                  <span
+                    className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${
+                      result.eligible ? "bg-emerald-400/15" : "bg-white/[0.06]"
+                    }`}
+                  >
+                    {result.eligible ? (
+                      <svg className="w-4 h-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25">
+                        <polyline points="5 13 10 18 19 7" />
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4 text-white/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25">
+                        <line x1="7" y1="7" x2="17" y2="17" />
+                        <line x1="17" y1="7" x2="7" y2="17" />
+                      </svg>
+                    )}
+                  </span>
+
+                  <div className="text-left">
+                    <p className="text-sm sm:text-base font-medium text-white">
+                      {result.eligible ? "Eligible" : "No $GOA found"}
+                    </p>
+                    <p className="text-xs sm:text-sm text-white/50 mt-0.5">
+                      {result.eligible
+                        ? `${result.totalBalance.toLocaleString()} $GOA — ARB ${result.arbBalance.toLocaleString()}, BNB ${result.bnbBalance.toLocaleString()}. You're registered — watch for claim instructions.`
+                        : "This address held no $GOA on BNB or Arbitrum."}
+                    </p>
+                  </div>
+                </div>
+              </div>
             )}
 
         </div>
