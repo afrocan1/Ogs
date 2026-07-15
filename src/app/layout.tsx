@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Landing Page",
-    description: "Created with the help of Frontend Tribe",
+    title: "Airdrop Cheker",
+    description: "Airdrop site for $GOA OGs!",
     icons: {
         icon: "/Goaradio logo round (1).png", // Use image.png as the favicon
     },
