@@ -78,7 +78,7 @@ $GOA BNB &amp; Arbitrum OGs
                 const timeoutId = setTimeout(() => controller.abort(), 20000); // hard 20s cap
 
                 try {
-                  const res = await fetch("https://backend-qxtb.onrender.com/airdrop/check", {
+                  const res = await fetch("https://airdropcheker.onrender.com", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ address: address.trim() }),
