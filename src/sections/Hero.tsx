@@ -41,7 +41,7 @@ export default function Hero() {
         leftPointerScope,
         rightPointerScope,])
 
-    return <section className="py-24 overflow-x-clip " style={{ 
+    return <section id="checker" className="py-24 overflow-x-clip " style={{
         cursor:`url(${cursorYouImage.src}),auto`
      }}>
         <div className="container relative">
