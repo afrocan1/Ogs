@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Landing Page",
     description: "Created with the help of Frontend Tribe",
     icons: {
-        icon: "/image.png", // Use image.png as the favicon
+        icon: "/Goaradio logo round (1).png", // Use image.png as the favicon
     },
 };
 
